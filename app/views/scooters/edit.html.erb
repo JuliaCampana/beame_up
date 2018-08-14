@@ -1,2 +1,8 @@
 <h1>Scooters#edit</h1>
 <p>Find me in app/views/scooters/edit.html.erb</p>
+
+<%= simple_form_for @scooter do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>

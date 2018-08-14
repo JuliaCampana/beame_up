@@ -5,6 +5,10 @@ class ScootersController < ApplicationController
     @scooters = Scooter.all
   end
 
+  def my_scooters
+    @scooters = Scooter.where(user: current_user)
+  end
+
   def show
     @scooter = Scooter.find(params[:id])
   end
@@ -25,12 +29,28 @@ class ScootersController < ApplicationController
   end
 
   def edit
+    @scooter = Scooter.find(params[:id])
   end
 
   def update
+    # scooter i want to update
+    @scooter = Scooter.find(params[:id])
+    #updating the fields
+    @scooter.update(scooter_params)
+    #saving it inside your db
+    if @scooter.save
+      #after saving, i want to go to a page: show page of the current scooter
+      redirect_to scooter_path(@scooter)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @scooter = Scooter.find(params[:id])
+    @scooter.destroy
+
+    redirect_to my_scooters_scooters_path
   end
 
   private

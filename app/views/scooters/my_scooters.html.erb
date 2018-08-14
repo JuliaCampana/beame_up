@@ -1,0 +1,7 @@
+<h1>My Scooters</h1>
+
+<ul>
+  <% @scooters.each do |scooter| %>
+    <li><%= scooter.name %> - <%= scooter.description %></li>
+  <% end %>
+</ul>
