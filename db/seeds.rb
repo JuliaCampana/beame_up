@@ -17,6 +17,9 @@
 # Scooter.create!(name: 'Bizoo', description: 'Killer speed', user: User.third)
 # Scooter.create!(name: 'Belha', description: 'Chilling on the way', user: User.fourth)
 # Scooter.create!(name: 'Fierce', description: 'Enjoy the ride', user: User.fifth)
+User.destroy_all
+Scooter.destroy_all
+
 
 address = [
   'Rua Visconde de Pirajá 444, Ipanema, Rio de Janeiro',
@@ -34,10 +37,10 @@ address = [
 
 # How Eric populated my user seed
 5.times do |t|
-  user = User.create(name: Faker::FunnyName.name, email: Faker::Internet.email, password: 123456)
+  user = User.create(email: Faker::Internet.email, password: 123456)
 end
 
-user = User.create!(name: "owner", email: "owner@gmail.com", password: 123456)
+user = User.create!(email: "owner@gmail.com", password: 123456)
 24.times do
   user.scooters.create!({
     name: Faker::GameOfThrones.character,
@@ -46,7 +49,3 @@ user = User.create!(name: "owner", email: "owner@gmail.com", password: 123456)
     address: address.sample
   })
 end
-
-
-
-
