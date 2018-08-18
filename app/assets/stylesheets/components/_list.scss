@@ -1,0 +1,47 @@
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  height: 150px;
+  margin: 20px 20px;
+}
+
+.list-btns {
+  padding-left: 10px;
+  flex-item: 0 0 20%;
+}
+
+.list li {
+  border-bottom: 1px solid rgba(220,224,244,0.4);
+  padding-bottom: 20px;
+}
+
+.list ul {
+  list-style: none;
+}
+
+.list-message {
+  list-style: none;
+  padding-left: 10px;
+  min-width: 100px;
+}
+
+.list-message h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.list-message p {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+
+
