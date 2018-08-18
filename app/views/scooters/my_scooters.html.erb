@@ -1,11 +1,36 @@
-<h3>My Scooters</h3>
+<body>
 
-<ul>
-  <% @scooters.each do |scooter| %>
-    <li><%= scooter.name %> - <%= scooter.description %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
 
-<div class="row">
-  <%= link_to "Add a new scooter", new_scooter_path, class: "btn btn-primary block" %></li>
+      <div class="title">
+        <h3> My Scooters</h3>
+        <%= link_to "Add a new scooter", new_scooter_path, class: "btn btn-primary block" %>
+      </div>
+
+
+      <div class="list">
+        <ul>
+            <% @scooters.each do |scooter| %>
+              <li>
+                <div class="list-message">
+                  <h3><strong><%= scooter.name %></strong></h3>
+                  <p><%= scooter.description %></p>
+                </div>
+
+                <div class="list-btns">
+                  <%= link_to "Edit", scooter_path(scooter), class: "btn btn-default" %>
+                  <%= link_to "Delete", scooter_path(scooter), class: "btn btn-danger" %>
+                </div>
+
+              </li>
+            <% end %>
+        </ul>
+      </div>
+
+
+    </div>
+  </div>
 </div>
+</body>
